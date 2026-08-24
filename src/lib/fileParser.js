@@ -35,3 +35,42 @@ export function getHeaders(rows) {
   }
   return Array.from(headers)
 }
+
+// Builds a CSV string from an array of plain objects, in the given
+// header/key order.
+export function toCsv(rows, columns) {
+  const escape = (value) => {
+    const str = value == null ? '' : String(value)
+    if (/[",\n]/.test(str)) return `"${str.replace(/"/g, '""')}"`
+    return str
+  }
+  const header = columns.map((c) => escape(c.label)).join(',')
+  const lines = rows.map((row) => columns.map((c) => escape(c.value(row))).join(','))
+  return [header, ...lines].join('\n')
+}
+
+export function downloadCsv(csvString, filename) {
+  const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' })
+  downloadBlob(blob, filename)
+}
+
+// Multi-sheet .xlsx export — sheets is an array of { name, rows: [plainObj, ...] }.
+export function downloadWorkbook(sheets, filename) {
+  const workbook = XLSX.utils.book_new()
+  for (const sheet of sheets) {
+    const worksheet = XLSX.utils.json_to_sheet(sheet.rows)
+    XLSX.utils.book_append_sheet(workbook, worksheet, sheet.name.slice(0, 31))
+  }
+  XLSX.writeFile(workbook, filename)
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  URL.revokeObjectURL(url)
+}

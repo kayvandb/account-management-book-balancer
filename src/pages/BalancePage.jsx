@@ -1,24 +1,27 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import StepIndicator from '../components/StepIndicator.jsx'
 import BalanceSettingsPanel from '../components/BalanceSettingsPanel.jsx'
 import BalanceResultsTable from '../components/BalanceResultsTable.jsx'
 import PairingSummary from '../components/PairingSummary.jsx'
 import BalanceAssignmentsTable from '../components/BalanceAssignmentsTable.jsx'
-import { runBalance, DEFAULT_TOLERANCE_PERCENT } from '../lib/balancing.js'
-import { DEFAULT_WEIGHTS } from '../lib/metrics.js'
 
-export default function BalancePage({ report, accounts, mapping, repColumns, fileName, onBack }) {
-  const [weights, setWeights] = useState(DEFAULT_WEIGHTS)
-  const [tolerancePercent, setTolerancePercent] = useState(DEFAULT_TOLERANCE_PERCENT)
-
+export default function BalancePage({
+  report,
+  accounts,
+  mapping,
+  repColumns,
+  balance,
+  weights,
+  onWeightsChange,
+  tolerancePercent,
+  onToleranceChange,
+  fileName,
+  onBack,
+  onContinue
+}) {
   const repRoles = useMemo(
     () => Array.from(new Set(repColumns.map((rc) => rc.label || rc.column))),
     [repColumns]
-  )
-
-  const balance = useMemo(
-    () => runBalance({ report, accounts, mapping, repRoles, weights, tolerancePercent }),
-    [report, accounts, mapping, repRoles, weights, tolerancePercent]
   )
 
   const unlockedCount = report.stats.unlockedCount
@@ -49,9 +52,9 @@ export default function BalancePage({ report, accounts, mapping, repColumns, fil
         mapping={mapping}
         accounts={accounts}
         weights={weights}
-        onWeightsChange={setWeights}
+        onWeightsChange={onWeightsChange}
         tolerancePercent={tolerancePercent}
-        onToleranceChange={setTolerancePercent}
+        onToleranceChange={onToleranceChange}
       />
 
       <BalanceResultsTable balance={balance} />
@@ -59,6 +62,15 @@ export default function BalancePage({ report, accounts, mapping, repColumns, fil
       <PairingSummary balance={balance} repRoles={repRoles} />
 
       <BalanceAssignmentsTable balance={balance} repRoles={repRoles} />
+
+      <div className="config-actions">
+        <button type="button" className="secondary-btn" onClick={onBack}>
+          ← Back
+        </button>
+        <button type="button" className="export-btn" onClick={onContinue}>
+          Continue to Review &amp; Export →
+        </button>
+      </div>
     </div>
   )
 }
