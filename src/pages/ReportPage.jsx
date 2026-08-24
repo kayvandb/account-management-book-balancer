@@ -1,18 +1,9 @@
-import { useMemo, useState } from 'react'
 import StepIndicator from '../components/StepIndicator.jsx'
 import SettingsPanel from '../components/SettingsPanel.jsx'
 import SummaryStats from '../components/SummaryStats.jsx'
 import LockReportTable from '../components/LockReportTable.jsx'
-import { normalizeAccounts } from '../lib/normalize.js'
-import { buildReport } from '../lib/consolidation.js'
-import { DEFAULT_SETTINGS } from '../lib/locking.js'
 
-export default function ReportPage({ rows, mapping, repColumns, fileName, onBack }) {
-  const [settings, setSettings] = useState(DEFAULT_SETTINGS)
-
-  const accounts = useMemo(() => normalizeAccounts(rows, mapping, repColumns), [rows, mapping, repColumns])
-  const report = useMemo(() => buildReport(accounts, settings), [accounts, settings])
-
+export default function ReportPage({ report, mapping, fileName, rowCount, settings, onSettingsChange, onBack, onContinue }) {
   return (
     <div className="app">
       <StepIndicator current={3} />
@@ -24,9 +15,8 @@ export default function ReportPage({ rows, mapping, repColumns, fileName, onBack
       <header className="app-header">
         <h1>Locking report</h1>
         <p className="subtitle">
-          <strong>{fileName}</strong> — {rows.length.toLocaleString()} accounts uploaded. Review
-          consolidation and locking results below before any rebalancing logic runs (coming in a
-          later pass).
+          <strong>{fileName}</strong> — {rowCount.toLocaleString()} accounts uploaded. Review
+          consolidation and locking results below before rebalancing.
         </p>
       </header>
 
@@ -44,7 +34,7 @@ export default function ReportPage({ rows, mapping, repColumns, fileName, onBack
 
       <SettingsPanel
         settings={settings}
-        onChange={setSettings}
+        onChange={onSettingsChange}
         hasRenewalDate={Boolean(mapping.renewalDate)}
         hasRecentlyMoved={Boolean(mapping.recentlyMoved)}
       />
@@ -52,6 +42,15 @@ export default function ReportPage({ rows, mapping, repColumns, fileName, onBack
       <SummaryStats stats={report.stats} />
 
       <LockReportTable groups={report.groups} />
+
+      <div className="config-actions">
+        <button type="button" className="secondary-btn" onClick={onBack}>
+          ← Back
+        </button>
+        <button type="button" className="export-btn" onClick={onContinue}>
+          Continue to Balancing →
+        </button>
+      </div>
     </div>
   )
 }

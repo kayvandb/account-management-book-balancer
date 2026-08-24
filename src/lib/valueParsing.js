@@ -22,6 +22,18 @@ export function parseNumber(value) {
   return Number.isFinite(n) ? n : 0
 }
 
+// Like parseNumber, but distinguishes "not a number" (null) from a real
+// zero — used for metrics like health score where a blank/non-numeric cell
+// should be excluded from an average or sum, not treated as 0.
+export function parseNumericOrNull(value) {
+  if (typeof value === 'number') return Number.isFinite(value) ? value : null
+  if (value == null) return null
+  const cleaned = String(value).replace(/[$,%\s]/g, '').replace(/^\((.*)\)$/, '-$1')
+  if (cleaned === '') return null
+  const n = parseFloat(cleaned)
+  return Number.isFinite(n) ? n : null
+}
+
 // Excel serial date epoch (1899-12-30) — used when a numeric date slips
 // through as a raw serial instead of being converted by the xlsx reader.
 function excelSerialToDate(serial) {

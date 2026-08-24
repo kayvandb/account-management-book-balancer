@@ -1,56 +1,49 @@
 # Book of Business Rebalancer
 
-A single-page tool for account management leaders to prep a book of
-business for rebalancing. This is **Pass 1**: upload, column mapping,
-corporate hierarchy consolidation, and the locking layer. It answers one
-question — *"which accounts are actually eligible to move?"* — and shows
-its work in a scannable report so you can trust the input before any
-rebalancing logic runs. Balancing (assigning unlocked accounts to reps)
-and export are later passes.
+A single-page tool for account management leaders to rebalance a book of business. **Pass 1**
+handles upload, column mapping, corporate hierarchy consolidation, and the locking layer — it
+answers *"which accounts are actually eligible to move?"* and shows its work in a scannable report
+so you can trust the input before any rebalancing logic runs. **Pass 2**, covered below, adds the
+weighted rebalancing engine that decides where unlocked accounts *go*. Manual override of
+individual recommendations and export are a later pass.
 
-## What this pass does
+## What this app does
 
-1. **Upload** a CSV or Excel roster, one row per account. A "What your
-   file needs" panel up front explains every required and optional
-   column and what mapping it unlocks.
-2. **Map your columns.** Your headers won't match the app's field names,
-   so you tell it which of your columns is the account name, ARR,
-   segment, etc. Owner/rep is a repeatable mapping — map an AM column and
-   a separate Renewal Manager column if accounts carry multiple ICs, and
-   they'll all show up in the report.
-3. **Consolidate corporate hierarchies.** If you map a parent/ultimate-parent
-   column, every child account sharing a parent value is grouped into one
-   consolidated unit — one logo, ARR summed across the group. A summary
-   line reports how many accounts got folded into how many groups (e.g.
-   *"51 accounts consolidated into 16 parent groups"*).
-4. **Lock accounts that shouldn't move.** Five rules, each independently
-   toggleable by whether you mapped the column it depends on:
-   - Renewal date falls within a configurable window of today (default
-     90 days)
+1. **Upload** a CSV or Excel roster, one row per account. A "What your file needs" panel up front
+   explains every required and optional column and what mapping it unlocks.
+2. **Map your columns.** Your headers won't match the app's field names, so you tell it which of
+   your columns is the account name, ARR, segment, etc. Owner/rep is a repeatable mapping — map an
+   AM column and a separate Renewal Manager column if accounts carry multiple ICs, and they'll all
+   show up in the report.
+3. **Consolidate corporate hierarchies.** If you map a parent/ultimate-parent column, every child
+   account sharing a parent value is grouped into one consolidated unit — one logo, ARR summed
+   across the group. A summary line reports how many accounts got folded into how many groups
+   (e.g. *"51 accounts consolidated into 16 parent groups"*).
+4. **Lock accounts that shouldn't move.** Five rules, each independently toggleable by whether you
+   mapped the column it depends on:
+   - Renewal date falls within a configurable window of today (default 90 days)
    - Active renewal discussion flag is true
    - Active upsell pipeline flag is true
-   - Recently-moved date falls within a configurable window of today
-     (default 180 days)
+   - Recently-moved date falls within a configurable window of today (default 180 days)
    - Manual override flag is true
 
-   A consolidated group is locked if **any** member account is locked —
-   the whole logo stays put, not just the triggering subsidiary.
-5. **Review the locking report** — every account or group, its owner(s),
-   locked/unlocked status, and every specific reason it's locked (an
-   account can trigger more than one rule at once). Click a consolidated
-   group to expand its member accounts and see which one(s) triggered the
-   lock. Summary cards up top show total accounts/groups, locked vs.
-   unlocked, a breakdown of locked accounts by reason, and how many
-   accounts were folded into consolidated groups.
+   A consolidated group is locked if **any** member account is locked — the whole logo stays put,
+   not just the triggering subsidiary.
+5. **Review the locking report** — every account or group, its owner(s), locked/unlocked status,
+   and every specific reason it's locked (an account can trigger more than one rule at once).
+   Click a consolidated group to expand its member accounts and see which one(s) triggered the
+   lock. Summary cards up top show total accounts/groups, locked vs. unlocked, a breakdown of
+   locked accounts by reason, and how many accounts were folded into consolidated groups.
+6. **Rebalance the unlocked accounts (Pass 2).** Set weights across six load metrics, then the
+   engine assigns every unlocked account/group to whoever in its segment is furthest below fair
+   share — while trying not to invent new rep-pairings when an existing one will do. See
+   [The balancing methodology, plainly](#the-balancing-methodology-plainly) below.
 
-Nothing here decides who an unlocked account moves *to* — that's the
-rebalancing logic in a later pass. This pass only decides what's allowed
-to move.
+Locked accounts never move, in either pass. Pass 2 only decides where the *unlocked* ones land.
 
 ## File format
 
-One row per account. Column headers can be anything — you map them to
-these roles on screen 2.
+One row per account. Column headers can be anything — you map them to these roles on screen 2.
 
 **Required:**
 
@@ -66,37 +59,158 @@ these roles on screen 2.
 | Role | Enables | If missing |
 |---|---|---|
 | Parent / Ultimate Parent ID | Hierarchy consolidation — child accounts grouped under one parent logo | Accounts are treated individually, not grouped |
-| Renewal Date | Locks accounts with a renewal inside the configured window | That lock rule never triggers |
+| Renewal Date | Locks accounts with a renewal inside the configured window; feeds the renewals/month and renewals/quarter balancing metrics | Those lock and balancing rules never trigger |
 | Active Renewal Discussion Flag | Locks accounts in a live renewal conversation | That lock rule never triggers |
 | Active Upsell Pipeline Flag | Locks accounts with open upsell/expansion pipeline | That lock rule never triggers |
+| Upsell / Expansion Pipeline ($) | A dollar figure used as a balancing metric (Pass 2) — separate from the flag above, which is boolean | That balancing metric is excluded, not treated as zero |
 | Recently Moved Date | Locks accounts that changed owners recently | That lock rule never triggers |
 | Manual Override Flag | Locks any account flagged by hand, regardless of other rules | Accounts can only be locked by the automatic rules |
-| Customer Health Score | Carried through to the report for context | Report omits it |
+| Customer Health Score | Shown for context; used as a balancing metric (Pass 2) if numeric | Report omits it, and it drops out of balancing |
 
-Flag columns accept common truthy/falsy spellings (`TRUE`/`FALSE`,
-`Yes`/`No`, `Y`/`N`, `1`/`0`). Dates accept Excel date cells or common
-string formats (`MM/DD/YYYY`, ISO, etc.).
+Flag columns accept common truthy/falsy spellings (`TRUE`/`FALSE`, `Yes`/`No`, `Y`/`N`, `1`/`0`).
+Dates accept Excel date cells or common string formats (`MM/DD/YYYY`, ISO, etc.).
 
 ## Locking rule details
 
-- **Renewal window** — locked if the renewal date is within
-  `renewalWindowDays` of today in either direction (covers an upcoming
-  renewal *and* a recently-passed one that hasn't been closed out yet).
+- **Renewal window** — locked if the renewal date is within `renewalWindowDays` of today in
+  either direction (covers an upcoming renewal *and* a recently-passed one that hasn't been
+  closed out yet).
 - **Recently moved** — locked if the recently-moved date is between 0 and
-  `recentlyMovedWindowDays` days in the past. A future-dated "move" is
-  ignored.
-- Both window lengths are adjustable from the Locking Report screen and
-  recompute the report live.
+  `recentlyMovedWindowDays` days in the past. A future-dated "move" is ignored.
+- Both window lengths are adjustable from the Locking Report screen and recompute the report live.
 
 ## Corporate hierarchy consolidation
 
-If a parent/ultimate-parent column is mapped, rows sharing the same
-(case-insensitive) parent value are grouped into one consolidated unit. A
-parent value referenced by only one row doesn't merge with anything and
-stays a standalone account. If a row's own account name matches the
-parent value (i.e. the parent company has its own row in the file), that
-row's name becomes the group's display name; otherwise the group is
-labeled with the raw parent value.
+If a parent/ultimate-parent column is mapped, rows sharing the same (case-insensitive) parent
+value are grouped into one consolidated unit. A parent value referenced by only one row doesn't
+merge with anything and stays a standalone account. If a row's own account name matches the
+parent value (i.e. the parent company has its own row in the file), that row's name becomes the
+group's display name; otherwise the group is labeled with the raw parent value.
+
+## The balancing methodology, plainly
+
+Pass 2 is a **heuristic**, not a solver. It makes one reasonable greedy pass through the unlocked
+accounts and assigns each one to whoever needs it most *at that moment*. It does not explore
+alternative orderings, backtrack, or guarantee the lowest possible imbalance — a banner on the
+Balance screen says so, and it's worth repeating here: **review the recommendation before
+finalizing it.**
+
+### The six load metrics
+
+Every rep's "load" is measured across up to six metrics, each independently weighted:
+
+| Metric | How a group contributes | Requires |
+|---|---|---|
+| Logo count | 1 per consolidated group (a 5-account logo is still 1 logo) | Always available |
+| ARR | The group's summed ARR | Always available |
+| Renewals per month | Count of member accounts with a renewal date in the next 30 days | Renewal Date mapped |
+| Renewals per quarter | Count of member accounts with a renewal date in the next 90 days | Renewal Date mapped |
+| Upsell/expansion pipeline $ | Sum of member accounts' pipeline dollar values | Upsell Pipeline ($) mapped |
+| Customer health score | Sum of member accounts' numeric health scores | Health Score mapped and numeric |
+
+**A metric with no source column is excluded from weighting entirely — never silently treated as
+zero.** The weight sliders for unavailable metrics are grayed out in the UI, and the remaining
+weights are renormalized across whatever *is* available.
+
+Health score is **summed**, like every other metric, rather than averaged. That's a deliberate
+simplification: averaging would require tracking a running mean as accounts get assigned, which
+doesn't compose cleanly with the additive fair-share math the other five metrics use. In practice
+it means a rep's total health-score weight roughly tracks book size as well as book quality — see
+[What this produces — and does not](#what-this-produces--and-does-not).
+
+Renewals/month and renewals/quarter use fixed 30- and 90-day rolling windows from today — a
+literal calendar month and quarter — independent of the Pass 1 locking windows, which are a
+separate, user-adjustable setting.
+
+### Fair share and "load"
+
+Balancing runs **separately for every (segment, rep role) pool** — Enterprise AMs are only
+compared against other Enterprise AMs, never against SMB AMs or against Renewal Managers. For
+each pool:
+
+- **Pool total** for a metric = that metric summed across *every* account/group in the segment,
+  locked and unlocked alike. Locked ARR still exists; it's just not movable.
+- **Fair-share target** = pool total ÷ number of reps currently working that segment in that
+  role. Reps aren't invented — the pool is exactly the reps who already own at least one account
+  there today.
+- **Current load** starts from each rep's **locked** accounts only. A rep's *before* total (shown
+  in the results table) additionally includes their current unlocked accounts, since that's what
+  their book actually looks like today, before the shuffle — but the simulation itself only seeds
+  from what can't move, then builds up the after-state by assigning the unlocked accounts one at a
+  time.
+- Load is attributed **per account, not per consolidated group**, with each member's logo credit
+  split fractionally across its group (a 4-account group split across 2 different current owners
+  credits each owner 0.5 logos). This matters because a messy consolidated group can easily have
+  inconsistent legacy ownership across its members — crediting the group's *full* total to every
+  such owner would double- or triple-count it. Per-account attribution keeps every pool's before
+  and after totals mathematically conserved: they always sum back to the pool total, exactly.
+
+### The greedy assignment
+
+1. Within each segment, unlocked groups are processed **largest ARR first** — ARR is used as the
+   proxy for "logo-impact" so one early, oddly-sized assignment doesn't distort everything that
+   follows.
+2. For each group and each rep role it needs, every candidate rep gets a **weighted deficit
+   score**: for each available metric, `(target − current) ÷ target`, weighted and summed. A
+   positive score means "below fair share"; the rep with the highest score is furthest behind.
+3. The group is assigned to the top-scoring rep for each role, loads are updated, and the process
+   repeats for the next group. This is the entire algorithm — no lookahead, no swapping earlier
+   assignments once made.
+
+### Multi-IC pairing minimization
+
+When a group needs two or more rep roles at once (an AM *and* a Renewal Manager, say), picking
+each role's single best rep independently can mint a brand-new pairing every time, even when an
+existing pairing would have worked almost as well. Instead:
+
+1. For each role, the top few candidates (by deficit score) are shortlisted.
+2. Every combination across those shortlists is scored as the sum of its members' individual
+   deficit scores — the highest-scoring combination is the "pure balance" choice.
+3. If any shortlisted combination is a pairing that **already exists** elsewhere in the segment
+   (seeded from the roster as uploaded, and updated as the run proceeds) and its score is within
+   the configured tolerance (default 5 percentage points of weighted deficit score) of the pure
+   balance choice, that reused combination is assigned instead.
+
+This is a bounded, greedy search over a handful of shortlisted reps per role — not an exhaustive
+search over every possible pairing — so it stays fast regardless of roster size.
+
+### Results
+
+The Balance screen shows, for every (role, segment) pool: each rep's fair-share target and their
+before/after totals across every weighted metric, with changed cells highlighted. Below that, a
+pairing summary counts distinct rep-pairings before vs. after the run, plus how many
+reassignments reused an existing pairing vs. created a new one. An assignment-detail table lists
+every unlocked account/group in the order it was processed and exactly who it landed on — the
+whole recommendation is inspectable, not a black box.
+
+### What this produces — and does not
+
+**This is a fast, transparent recommendation for a first-pass rebalance — not an optimal
+solution, and not a substitute for a human reviewing the result.** Concretely:
+
+- It is a **greedy heuristic**, not a solver. Processing groups in a different order, or making a
+  locally-worse assignment early on, can sometimes produce a *more* balanced final result than
+  always taking the locally-best option — a greedy pass can't see that. It does not backtrack.
+- **Fair share is equal division**, not capacity-weighted. A rep pool's target assumes every rep
+  in it should end up with roughly the same load, with no way to tell the app "this rep has more
+  bandwidth than that one."
+- **Health score is summed, not averaged** (see above) — it nudges toward balanced *total* health
+  points, which correlates with but isn't identical to balanced *average* portfolio health.
+  A rep with a small number of very high- or very low-health accounts can look more or less
+  balanced on this metric than their average portfolio quality would suggest.
+- **Renewals/month and renewals/quarter are rolling windows from today**, not a true recurring
+  cadence — re-running the tool next month will naturally shift which accounts count toward those
+  two metrics.
+- **A consolidated group with inconsistent legacy ownership is deliberately "split"** in the
+  before-state (fractional logo credit per current owner) so the numbers stay conservative and
+  auditable — but that means no single rep is shown as the group's sole "current" owner if the
+  data itself doesn't agree on one.
+- It does **not** account for rep tenure, ramp time on newly-assigned (as opposed to
+  newly-*moved*) accounts, geography, language, vertical specialization, or anything else not
+  present in the uploaded columns.
+
+Use it to generate a strong starting point and see the tradeoffs it made, not as an
+auto-finalized headcount decision.
 
 ## Running locally
 
@@ -107,8 +221,7 @@ npm install
 npm run dev
 ```
 
-This starts a Vite dev server (default `http://localhost:5174`) and opens
-it in your browser.
+This starts a Vite dev server (default `http://localhost:5174`) and opens it in your browser.
 
 To build a static production bundle:
 
@@ -119,24 +232,25 @@ npm run preview   # serve the built output locally
 
 ## Sample data
 
-[`samples/sample-roster.csv`](samples/sample-roster.csv) has 180 rows
-built to exercise every branch of this pass:
+[`samples/sample-roster.csv`](samples/sample-roster.csv) has 180 rows built to exercise every
+branch of both passes:
 
 - 4 segments (Enterprise, Mid-Market, SMB, Strategic)
-- 16 parent/child hierarchy groups of varying size (2–5 accounts each),
-  some with the parent's own row present (tests display-name resolution)
-  and some without (tests the fallback label)
-- Two rep columns (`Account Manager`, `Renewal Manager`) simulating a
-  multi-IC book
-- A mix of accounts hitting every lock reason individually, several
-  hitting two or three reasons at once (to check the multi-reason
-  display), and a healthy share hitting none (to check the unlocked
-  path)
+- 16 parent/child hierarchy groups of varying size (2–5 accounts each), some with the parent's
+  own row present (tests display-name resolution) and some without (tests the fallback label) —
+  and, since reps are assigned per-row independent of grouping, several of these groups carry
+  inconsistent legacy ownership across members, exercising the fractional logo-credit path
+- Two rep columns (`Account Manager`, `Renewal Manager`) simulating a multi-IC book, with enough
+  overlap in who's paired with whom that pairing-reuse has real opportunities to kick in
+- A mix of accounts hitting every lock reason individually, several hitting two or three reasons
+  at once (to check the multi-reason display), and a healthy share hitting none (to check the
+  unlocked path)
+- A numeric `Upsell Pipeline ($)` column distinct from the boolean `Upsell Opportunity Open?`
+  flag, and a numeric `Health Score (0-100)` column, so every balancing metric has real data
 
 ## Tech
 
 - [React](https://react.dev/) + [Vite](https://vitejs.dev/)
-- [SheetJS (`xlsx`)](https://sheetjs.com/) for parsing `.xlsx`/`.xls`/`.csv`
-  uploads
-- No backend — all parsing, consolidation, and locking logic runs
-  client-side in the browser; uploaded files never leave your machine.
+- [SheetJS (`xlsx`)](https://sheetjs.com/) for parsing `.xlsx`/`.xls`/`.csv` uploads
+- No backend — all parsing, consolidation, locking, and balancing logic runs client-side in the
+  browser; uploaded files never leave your machine.

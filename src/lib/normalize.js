@@ -1,4 +1,4 @@
-import { parseBoolean, parseDateValue, parseNumber, cleanString } from './valueParsing.js'
+import { parseBoolean, parseDateValue, parseNumber, parseNumericOrNull, cleanString } from './valueParsing.js'
 
 // Turns raw spreadsheet rows into normalized account objects using the
 // user's column mapping. repColumns is an array of { id, label, column }.
@@ -27,7 +27,9 @@ export function normalizeAccounts(rawRows, mapping, repColumns) {
         : false,
       recentlyMovedDate: mapping.recentlyMoved ? parseDateValue(row[mapping.recentlyMoved]) : null,
       manualOverride: mapping.manualOverride ? parseBoolean(row[mapping.manualOverride]) : false,
-      healthScore: mapping.healthScore ? cleanString(row[mapping.healthScore]) : ''
+      healthScore: mapping.healthScore ? cleanString(row[mapping.healthScore]) : '',
+      healthScoreValue: mapping.healthScore ? parseNumericOrNull(row[mapping.healthScore]) : null,
+      upsellPipelineValue: mapping.upsellPipelineValue ? parseNumericOrNull(row[mapping.upsellPipelineValue]) : null
     }
   })
 }

@@ -1,7 +1,8 @@
 const STEPS = [
   { step: 1, label: 'Upload' },
   { step: 2, label: 'Map Columns' },
-  { step: 3, label: 'Locking Report' }
+  { step: 3, label: 'Locking Report' },
+  { step: 4, label: 'Balance' }
 ]
 
 export default function StepIndicator({ current }) {

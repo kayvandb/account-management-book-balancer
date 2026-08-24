@@ -11,6 +11,7 @@ const EMPTY_MAPPING = {
   renewalDate: '',
   activeRenewalDiscussion: '',
   activeUpsellPipeline: '',
+  upsellPipelineValue: '',
   recentlyMoved: '',
   manualOverride: '',
   healthScore: ''
@@ -37,7 +38,8 @@ function buildInitialMapping(headers) {
     parentId: guessColumn(headers, ['ultimateparent', 'parentaccount', 'parentid', 'parent']),
     renewalDate: guessColumn(headers, ['renewaldate', 'nextrenewal', 'renewal']),
     activeRenewalDiscussion: guessColumn(headers, ['activerenewaldiscussion', 'renewaldiscussion', 'renewalconversation']),
-    activeUpsellPipeline: guessColumn(headers, ['activeupsellpipeline', 'upsellpipeline', 'upsellopportunity', 'upsell']),
+    activeUpsellPipeline: guessColumn(headers, ['activeupsellpipeline', 'upsellopportunity', 'upsellopportunityopen']),
+    upsellPipelineValue: guessColumn(headers, ['upsellpipelinevalue', 'upsellpipeline', 'expansionpipelinevalue', 'expansionpipeline', 'pipelinevalue']),
     recentlyMoved: guessColumn(headers, ['recentlymoveddate', 'movedate', 'transferdate', 'bookmovedate']),
     manualOverride: guessColumn(headers, ['manualoverride', 'override', 'donotmove']),
     healthScore: guessColumn(headers, ['healthscore', 'health', 'customerhealth'])

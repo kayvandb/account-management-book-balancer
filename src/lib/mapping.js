@@ -55,6 +55,12 @@ export const OPTIONAL_ROLES = [
     missing: 'No upsell-pipeline flag mapped — that lock rule will never trigger.'
   },
   {
+    key: 'upsellPipelineValue',
+    label: 'Upsell / Expansion Pipeline ($)',
+    enables: 'Used as a balancing metric — spreads open pipeline dollars evenly across reps when rebalancing (Pass 2).',
+    missing: 'No pipeline dollar amount mapped — that balancing metric is excluded from rebalancing, not treated as zero.'
+  },
+  {
     key: 'recentlyMoved',
     label: 'Recently Moved Date',
     enables: 'Locks accounts that changed owners recently, protecting ramp time on a new relationship.',
@@ -69,8 +75,8 @@ export const OPTIONAL_ROLES = [
   {
     key: 'healthScore',
     label: 'Customer Health Score',
-    enables: 'Carried through to the report for context. Not used to lock accounts in this pass.',
-    missing: 'No health score mapped — the report will omit it.'
+    enables: 'Shown for context, and available as a balancing metric (Pass 2) if numeric. Never used to lock accounts.',
+    missing: 'No health score mapped — the report omits it, and it drops out of balancing.'
   }
 ]
 
