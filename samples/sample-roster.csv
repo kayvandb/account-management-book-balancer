@@ -1,0 +1,181 @@
+Account Name,Ultimate Parent Account,Customer Segment,Annual Recurring Revenue,Account Manager,Renewal Manager,Next Renewal Date,Renewal Conversation Active?,Upsell Opportunity Open?,Book Transfer Date,Do Not Move,Health Score (0-100)
+Brightpath Analytics,Brightpath Analytics,Strategic,$257000,Alice Chen,Priya Shah,10/31/2026,No,No,,No,79
+Brightpath Analytics APAC,Brightpath Analytics,Strategic,$148000,Brian Ortiz,Quinn Baxter,08/19/2026,No,No,,No,49
+Brightpath Analytics North America,Brightpath Analytics,Strategic,$327000,Casey Nguyen,Rosa Delgado,08/24/2026,No,No,,No,80
+Brightpath Analytics West,Brightpath Analytics,Strategic,$63000,Devon Marsh,Sam Whitfield,,Yes,No,,No,51
+Harborview Freight West,Harborview Freight,Strategic,$36000,Elena Ruiz,Tara Okafor,,No,Yes,,No,88
+Harborview Freight Subsidiary,Harborview Freight,Strategic,$68000,Farah Ali,Umar Siddiqui,,No,No,03/04/2026,No,86
+Harborview Freight West 2,Harborview Freight,Strategic,$41000,Grace Kim,Vera Lindqvist,,No,No,02/25/2026,No,76
+Hooli Analytics,Hooli Analytics,Strategic,$16000,Hector Lopez,Will Novak,,No,No,,Yes,68
+Hooli Analytics Manufacturing,Hooli Analytics,Strategic,$342000,Ivy Sullivan,Priya Shah,10/13/2026,No,Yes,,No,76
+Hooli Analytics Subsidiary,Hooli Analytics,Strategic,$404000,Jamal Foster,Quinn Baxter,,No,No,03/31/2026,Yes,49
+Massive Materials West,Massive Materials,Enterprise,$26000,Alice Chen,Rosa Delgado,08/22/2026,Yes,Yes,,No,66
+Massive Materials APAC,Massive Materials,Enterprise,$166000,Brian Ortiz,Sam Whitfield,09/11/2027,No,No,,No,50
+Massive Materials Manufacturing,Massive Materials,Enterprise,$391000,Casey Nguyen,Tara Okafor,10/02/2025,No,No,,No,72
+Massive Materials Manufacturing 2,Massive Materials,Enterprise,$140000,Devon Marsh,Umar Siddiqui,,No,No,11/28/2024,No,40
+Massive Materials EMEA,Massive Materials,Enterprise,$394000,Elena Ruiz,Vera Lindqvist,09/22/2027,No,No,,No,50
+Wayne Logistics,Wayne Logistics,Enterprise,$267000,Farah Ali,Will Novak,,No,No,,No,57
+Wayne Logistics North America,Wayne Logistics,Enterprise,$308000,Grace Kim,Priya Shah,04/07/2027,No,No,,No,57
+Massive Dynamics Subsidiary,Massive Dynamics,Strategic,$261000,Hector Lopez,Quinn Baxter,,No,No,,No,78
+Massive Dynamics Subsidiary 2,Massive Dynamics,Strategic,$124000,Ivy Sullivan,Rosa Delgado,05/07/2027,No,No,,No,61
+Massive Dynamics EMEA,Massive Dynamics,Strategic,$149000,Jamal Foster,Sam Whitfield,,No,No,,No,69
+Oakmont Freight,Oakmont Freight,SMB,$292000,Alice Chen,Tara Okafor,11/17/2026,No,No,,No,72
+Oakmont Freight EMEA,Oakmont Freight,SMB,$326000,Brian Ortiz,Umar Siddiqui,08/15/2026,No,No,,No,88
+Pinnacle Media West,Pinnacle Media,SMB,$228000,Casey Nguyen,Vera Lindqvist,08/24/2026,No,No,,No,43
+Pinnacle Media EMEA,Pinnacle Media,SMB,$174000,Devon Marsh,Will Novak,,Yes,No,,No,92
+Pinnacle Media Retail Div.,Pinnacle Media,SMB,$46000,Elena Ruiz,Priya Shah,,No,Yes,,No,67
+Pinnacle Media EMEA 2,Pinnacle Media,SMB,$457000,Farah Ali,Quinn Baxter,,No,No,05/19/2026,No,63
+Pinnacle Media EMEA 3,Pinnacle Media,SMB,$450000,Grace Kim,Rosa Delgado,,No,No,02/25/2026,No,95
+Cascade Ventures,Cascade Ventures,SMB,$122000,Hector Lopez,Sam Whitfield,,No,No,,Yes,68
+Cascade Ventures APAC,Cascade Ventures,SMB,$476000,Ivy Sullivan,Tara Okafor,09/02/2026,No,Yes,,No,56
+Cascade Ventures Retail Div.,Cascade Ventures,SMB,$149000,Jamal Foster,Umar Siddiqui,,No,No,07/13/2026,Yes,79
+Redwood Financial Manufacturing,Redwood Financial,Mid-Market,$127000,Alice Chen,Vera Lindqvist,06/16/2026,Yes,Yes,,No,76
+Redwood Financial Subsidiary,Redwood Financial,Mid-Market,$29000,Brian Ortiz,Will Novak,09/11/2027,No,No,,No,45
+Hooli Group,Hooli Group,Mid-Market,$41000,Casey Nguyen,Priya Shah,09/22/2025,No,No,,No,51
+Hooli Group APAC,Hooli Group,Mid-Market,$396000,Devon Marsh,Quinn Baxter,,No,No,06/11/2025,No,37
+Acme Financial APAC,Acme Financial,Enterprise,$271000,Elena Ruiz,Rosa Delgado,03/21/2027,No,No,,No,59
+Acme Financial East,Acme Financial,Enterprise,$206000,Farah Ali,Sam Whitfield,07/12/2027,No,No,,No,77
+Acme Financial West,Acme Financial,Enterprise,$197000,Grace Kim,Tara Okafor,08/01/2027,No,No,,No,93
+Acme Financial EMEA,Acme Financial,Enterprise,$274000,Hector Lopez,Umar Siddiqui,,No,No,,No,91
+Brightpath Financial,Brightpath Financial,Strategic,$201000,Ivy Sullivan,Vera Lindqvist,01/05/2027,No,No,,No,60
+Brightpath Financial EMEA,Brightpath Financial,Strategic,$407000,Jamal Foster,Will Novak,06/30/2027,No,No,,No,74
+Brightpath Financial Retail Div.,Brightpath Financial,Strategic,$397000,Alice Chen,Priya Shah,10/23/2026,No,No,,No,36
+Brightpath Financial Manufacturing,Brightpath Financial,Strategic,$93000,Brian Ortiz,Quinn Baxter,07/27/2026,No,No,,No,45
+Brightpath Financial EMEA 2,Brightpath Financial,Strategic,$343000,Casey Nguyen,Rosa Delgado,08/24/2026,No,No,,No,46
+Globex Group APAC,Globex Group,SMB,$82000,Devon Marsh,Sam Whitfield,,Yes,No,,No,35
+Globex Group Subsidiary,Globex Group,SMB,$177000,Elena Ruiz,Tara Okafor,,No,Yes,,No,82
+Cyberdyne Foods,Cyberdyne Foods,Mid-Market,$205000,Farah Ali,Umar Siddiqui,,No,No,03/29/2026,No,77
+Cyberdyne Foods EMEA,Cyberdyne Foods,Mid-Market,$32000,Grace Kim,Vera Lindqvist,,No,No,02/25/2026,No,37
+Cyberdyne Foods West,Cyberdyne Foods,Mid-Market,$98000,Hector Lopez,Will Novak,,No,No,,Yes,68
+Cyberdyne Foods Retail Div.,Cyberdyne Foods,Mid-Market,$58000,Ivy Sullivan,Priya Shah,10/25/2026,No,Yes,,No,59
+Hooli Logistics Retail Div.,Hooli Logistics,SMB,$424000,Jamal Foster,Quinn Baxter,,No,No,03/24/2026,Yes,63
+Hooli Logistics EMEA,Hooli Logistics,SMB,$468000,Alice Chen,Rosa Delgado,06/22/2026,Yes,Yes,,No,41
+Silverline Health,,Mid-Market,$462000,Brian Ortiz,Sam Whitfield,06/03/2027,No,No,,No,80
+Globex Systems,,SMB,$106000,Casey Nguyen,Tara Okafor,02/01/2026,No,No,,No,57
+Cascade Group,,Mid-Market,$126000,Devon Marsh,Umar Siddiqui,,No,No,12/29/2024,No,62
+Pinnacle Networks,,Enterprise,$38000,Elena Ruiz,Vera Lindqvist,07/15/2027,No,No,,No,87
+Fenwick Financial,,SMB,$436000,Farah Ali,Will Novak,04/11/2027,No,No,,No,41
+Cascade Energy,,Mid-Market,$398000,Grace Kim,Priya Shah,04/22/2027,No,No,,No,95
+Cascade Systems,,SMB,$309000,Hector Lopez,Quinn Baxter,01/02/2027,No,No,,No,44
+Initech Materials,,Mid-Market,$276000,Ivy Sullivan,Rosa Delgado,05/20/2027,No,No,,No,78
+Wayne Group,,SMB,$353000,Jamal Foster,Sam Whitfield,06/14/2027,No,No,,No,82
+Harborview Energy,,Enterprise,$473000,Alice Chen,Tara Okafor,11/16/2026,No,No,,No,46
+Umbrella Financial,,Mid-Market,$155000,Brian Ortiz,Umar Siddiqui,08/01/2026,No,No,,No,36
+Silverline Materials,,Mid-Market,$159000,Casey Nguyen,Vera Lindqvist,08/24/2026,No,No,,No,57
+Massive Industries,,Enterprise,$136000,Devon Marsh,Will Novak,,Yes,No,,No,61
+Summit Media,,Strategic,$154000,Elena Ruiz,Priya Shah,,No,Yes,,No,47
+Hooli Technologies,,Strategic,$465000,Farah Ali,Quinn Baxter,,No,No,07/22/2026,No,51
+Hooli Partners,,Strategic,$184000,Grace Kim,Rosa Delgado,,No,No,02/25/2026,No,75
+Brightpath Energy,,Enterprise,$75000,Hector Lopez,Sam Whitfield,,No,No,,Yes,78
+Bluepeak Robotics,,Enterprise,$99000,Ivy Sullivan,Tara Okafor,11/05/2026,No,Yes,,No,42
+Ironclad Financial,,Enterprise,$316000,Jamal Foster,Umar Siddiqui,,No,No,03/01/2026,Yes,56
+Cascade Industries,,Mid-Market,$447000,Alice Chen,Vera Lindqvist,07/14/2026,Yes,Yes,,No,43
+Ironclad Dynamics,,SMB,$362000,Brian Ortiz,Will Novak,03/22/2027,No,No,,No,47
+Soylent Ventures,,Strategic,$440000,Casey Nguyen,Priya Shah,08/27/2025,No,No,,No,75
+Oakmont Networks,,Strategic,$160000,Devon Marsh,Quinn Baxter,,No,No,10/16/2025,No,38
+Soylent Partners,,Enterprise,$416000,Elena Ruiz,Rosa Delgado,05/03/2027,No,No,,No,90
+Bluepeak Financial,,Enterprise,$379000,Farah Ali,Sam Whitfield,,No,No,,No,95
+Vandelay Financial,,Mid-Market,$315000,Grace Kim,Tara Okafor,04/18/2027,No,No,,No,35
+Redwood Partners,,SMB,$208000,Hector Lopez,Umar Siddiqui,08/22/2027,No,No,,No,42
+Brightpath Financial 2,,Mid-Market,$462000,Ivy Sullivan,Vera Lindqvist,,No,No,,No,93
+Ironclad Foods,,Enterprise,$440000,Jamal Foster,Will Novak,,No,No,,No,55
+Larkspur Energy,,SMB,$173000,Alice Chen,Priya Shah,09/23/2026,No,No,,No,50
+Initech Robotics,,SMB,$38000,Brian Ortiz,Quinn Baxter,05/27/2026,No,No,,No,60
+Harborview Media,,Mid-Market,$413000,Casey Nguyen,Rosa Delgado,08/24/2026,No,No,,No,98
+Brightpath Logistics,,SMB,$92000,Devon Marsh,Sam Whitfield,,Yes,No,,No,46
+Larkspur Solutions,,Mid-Market,$451000,Elena Ruiz,Tara Okafor,,No,Yes,,No,53
+Larkspur Foods,,SMB,$410000,Farah Ali,Umar Siddiqui,,No,No,06/07/2026,No,68
+Soylent Technologies,,Mid-Market,$231000,Grace Kim,Vera Lindqvist,,No,No,02/25/2026,No,39
+Massive Holdings,,Enterprise,$154000,Hector Lopez,Will Novak,,No,No,,Yes,57
+Wayne Systems,,Enterprise,$120000,Ivy Sullivan,Priya Shah,11/08/2026,No,Yes,,No,35
+Larkspur Logistics,,Strategic,$367000,Jamal Foster,Quinn Baxter,,No,No,06/04/2026,Yes,83
+Hooli Materials,,Strategic,$315000,Alice Chen,Rosa Delgado,06/17/2026,Yes,Yes,,No,69
+Silverline Financial,,Strategic,$143000,Brian Ortiz,Sam Whitfield,08/16/2027,No,No,,No,87
+Stark Solutions,,Enterprise,$95000,Casey Nguyen,Tara Okafor,08/11/2025,No,No,,No,94
+Silverline Dynamics,,Mid-Market,$409000,Devon Marsh,Umar Siddiqui,,No,No,09/19/2025,No,78
+Bluepeak Health,,Enterprise,$437000,Elena Ruiz,Vera Lindqvist,,No,No,,No,39
+Summit Partners,,Strategic,$435000,Farah Ali,Will Novak,05/30/2027,No,No,,No,57
+Acme Financial 2,,Strategic,$239000,Grace Kim,Priya Shah,08/09/2027,No,No,,No,68
+Brightpath Health,,SMB,$384000,Hector Lopez,Quinn Baxter,09/15/2027,No,No,,No,84
+Harborview Freight 2,,Enterprise,$272000,Ivy Sullivan,Rosa Delgado,04/01/2027,No,No,,No,96
+Oakmont Systems,,Mid-Market,$26000,Jamal Foster,Sam Whitfield,03/23/2027,No,No,,No,76
+Wayne Financial,,Mid-Market,$117000,Alice Chen,Tara Okafor,11/18/2026,No,No,,No,74
+Pinnacle Solutions,,Mid-Market,$216000,Brian Ortiz,Umar Siddiqui,06/15/2026,No,No,,No,44
+Wayne Holdings,,Strategic,$299000,Casey Nguyen,Vera Lindqvist,08/24/2026,No,No,,No,74
+Harborview Analytics,,Strategic,$84000,Devon Marsh,Will Novak,,Yes,No,,No,41
+Meridian Media,,Strategic,$252000,Elena Ruiz,Priya Shah,,No,Yes,,No,70
+Brightpath Robotics,,Strategic,$352000,Farah Ali,Quinn Baxter,,No,No,06/23/2026,No,74
+Massive Partners,,Mid-Market,$237000,Grace Kim,Rosa Delgado,,No,No,02/25/2026,No,82
+Hooli Technologies 2,,Mid-Market,$227000,Hector Lopez,Sam Whitfield,,No,No,,Yes,40
+Initech Group,,SMB,$455000,Ivy Sullivan,Tara Okafor,11/13/2026,No,Yes,,No,64
+Acme Media,,SMB,$382000,Jamal Foster,Umar Siddiqui,,No,No,07/05/2026,Yes,61
+Soylent Analytics,,Strategic,$336000,Alice Chen,Vera Lindqvist,07/19/2026,Yes,Yes,,No,67
+Brightpath Health 2,,SMB,$476000,Brian Ortiz,Will Novak,02/11/2027,No,No,,No,45
+Umbrella Foods,,Mid-Market,$44000,Casey Nguyen,Priya Shah,09/09/2025,No,No,,No,78
+Cyberdyne Holdings,,SMB,$228000,Devon Marsh,Quinn Baxter,,No,No,01/29/2025,No,92
+Hooli Analytics 2,,Enterprise,$401000,Elena Ruiz,Rosa Delgado,08/01/2027,No,No,,No,50
+Wayne Freight,,Strategic,$333000,Farah Ali,Sam Whitfield,,No,No,,No,51
+Larkspur Systems,,Enterprise,$310000,Grace Kim,Tara Okafor,12/31/2026,No,No,,No,38
+Acme Dynamics,,SMB,$236000,Hector Lopez,Umar Siddiqui,,No,No,,No,42
+Oakmont Health,,Mid-Market,$135000,Ivy Sullivan,Vera Lindqvist,08/03/2027,No,No,,No,65
+Summit Networks,,Enterprise,$52000,Jamal Foster,Will Novak,02/11/2027,No,No,,No,43
+Cascade Networks,,Enterprise,$270000,Alice Chen,Priya Shah,11/08/2026,No,No,,No,56
+Harborview Materials,,Strategic,$144000,Brian Ortiz,Quinn Baxter,08/11/2026,No,No,,No,80
+Massive Dynamics 2,,SMB,$436000,Casey Nguyen,Rosa Delgado,08/24/2026,No,No,,No,66
+Bluepeak Solutions,,SMB,$443000,Devon Marsh,Sam Whitfield,,Yes,No,,No,62
+Pinnacle Holdings,,Mid-Market,$439000,Elena Ruiz,Tara Okafor,,No,Yes,,No,47
+Oakmont Industries,,Strategic,$97000,Farah Ali,Umar Siddiqui,,No,No,05/29/2026,No,90
+Soylent Energy,,Enterprise,$67000,Grace Kim,Vera Lindqvist,,No,No,02/25/2026,No,58
+Bluepeak Networks,,SMB,$79000,Hector Lopez,Will Novak,,No,No,,Yes,80
+Summit Financial,,Enterprise,$207000,Ivy Sullivan,Priya Shah,08/31/2026,No,Yes,,No,41
+Silverline Robotics,,Strategic,$40000,Jamal Foster,Quinn Baxter,,No,No,06/27/2026,Yes,93
+Wayne Systems 2,,SMB,$18000,Alice Chen,Rosa Delgado,07/21/2026,Yes,Yes,,No,74
+Pinnacle Dynamics,,Mid-Market,$169000,Brian Ortiz,Sam Whitfield,04/11/2027,No,No,,No,84
+Fenwick Analytics,,SMB,$389000,Casey Nguyen,Tara Okafor,01/25/2026,No,No,,No,42
+Wayne Logistics 2,,Mid-Market,$245000,Devon Marsh,Umar Siddiqui,,No,No,01/21/2026,No,39
+Oakmont Systems 2,,Enterprise,$380000,Elena Ruiz,Vera Lindqvist,,No,No,,No,91
+Summit Partners 2,,SMB,$398000,Farah Ali,Will Novak,02/01/2027,No,No,,No,83
+Umbrella Financial 2,,Enterprise,$152000,Grace Kim,Priya Shah,08/04/2027,No,No,,No,93
+Bluepeak Media,,Mid-Market,$247000,Hector Lopez,Quinn Baxter,09/07/2027,No,No,,No,76
+Brightpath Logistics 2,,SMB,$65000,Ivy Sullivan,Rosa Delgado,08/07/2027,No,No,,No,53
+Fenwick Solutions,,Enterprise,$415000,Jamal Foster,Sam Whitfield,,No,No,,No,68
+Redwood Analytics,,Enterprise,$387000,Alice Chen,Tara Okafor,08/26/2026,No,No,,No,62
+Initech Materials 2,,Enterprise,$214000,Brian Ortiz,Umar Siddiqui,08/05/2026,No,No,,No,77
+Acme Partners,,Strategic,$360000,Casey Nguyen,Vera Lindqvist,08/24/2026,No,No,,No,36
+Initech Industries,,Strategic,$276000,Devon Marsh,Will Novak,,Yes,No,,No,83
+Harborview Networks,,Enterprise,$370000,Elena Ruiz,Priya Shah,,No,Yes,,No,65
+Bluepeak Energy,,SMB,$66000,Farah Ali,Quinn Baxter,,No,No,03/06/2026,No,96
+Bluepeak Industries,,Strategic,$188000,Grace Kim,Rosa Delgado,,No,No,02/25/2026,No,96
+Hooli Dynamics,,Strategic,$451000,Hector Lopez,Sam Whitfield,,No,No,,Yes,73
+Globex Logistics,,Enterprise,$440000,Ivy Sullivan,Tara Okafor,10/07/2026,No,Yes,,No,91
+Ironclad Financial 2,,SMB,$434000,Jamal Foster,Umar Siddiqui,,No,No,05/09/2026,Yes,46
+Larkspur Freight,,SMB,$327000,Alice Chen,Vera Lindqvist,05/31/2026,Yes,Yes,,No,88
+Oakmont Media,,Enterprise,$64000,Brian Ortiz,Will Novak,08/05/2027,No,No,,No,67
+Soylent Financial,,SMB,$125000,Casey Nguyen,Priya Shah,10/08/2025,No,No,,No,62
+Vandelay Materials,,SMB,$111000,Devon Marsh,Quinn Baxter,,No,No,09/29/2025,No,84
+Globex Solutions,,Enterprise,$79000,Elena Ruiz,Rosa Delgado,,No,No,,No,60
+Acme Solutions,,SMB,$70000,Farah Ali,Sam Whitfield,12/29/2026,No,No,,No,43
+Umbrella Analytics,,Mid-Market,$466000,Grace Kim,Tara Okafor,02/17/2027,No,No,,No,51
+Northwind Partners,,Enterprise,$86000,Hector Lopez,Umar Siddiqui,,No,No,,No,48
+Initech Networks,,Enterprise,$49000,Ivy Sullivan,Vera Lindqvist,01/23/2027,No,No,,No,74
+Vandelay Technologies,,Mid-Market,$321000,Jamal Foster,Will Novak,,No,No,,No,38
+Meridian Technologies,,Mid-Market,$83000,Alice Chen,Priya Shah,11/11/2026,No,No,,No,70
+Massive Dynamics 3,,SMB,$480000,Brian Ortiz,Quinn Baxter,08/16/2026,No,No,,No,89
+Vandelay Health,,Enterprise,$417000,Casey Nguyen,Rosa Delgado,08/24/2026,No,No,,No,85
+Initech Analytics,,Enterprise,$395000,Devon Marsh,Sam Whitfield,,Yes,No,,No,66
+Wayne Dynamics,,Strategic,$438000,Elena Ruiz,Tara Okafor,,No,Yes,,No,93
+Vandelay Group,,Enterprise,$59000,Farah Ali,Umar Siddiqui,,No,No,07/18/2026,No,47
+Bluepeak Networks 2,,Enterprise,$183000,Grace Kim,Vera Lindqvist,,No,No,02/25/2026,No,80
+Oakmont Holdings,,Strategic,$435000,Hector Lopez,Will Novak,,No,No,,Yes,71
+Hooli Partners 2,,Strategic,$373000,Ivy Sullivan,Priya Shah,09/11/2026,No,Yes,,No,90
+Vandelay Partners,,SMB,$464000,Jamal Foster,Quinn Baxter,,No,No,05/22/2026,Yes,39
+Bluepeak Dynamics,,Enterprise,$47000,Alice Chen,Rosa Delgado,07/04/2026,Yes,Yes,,No,38
+Massive Systems,,Mid-Market,$223000,Brian Ortiz,Sam Whitfield,06/01/2027,No,No,,No,85
+Brightpath Solutions,,SMB,$241000,Casey Nguyen,Tara Okafor,01/31/2026,No,No,,No,62
+Silverline Solutions,,Enterprise,$302000,Devon Marsh,Umar Siddiqui,,No,No,02/20/2025,No,98
+Hooli Robotics,,SMB,$354000,Elena Ruiz,Vera Lindqvist,,No,No,,No,38
+Wayne Solutions,,SMB,$118000,Farah Ali,Will Novak,,No,No,,No,95
+Cyberdyne Ventures,,Strategic,$15000,Grace Kim,Priya Shah,07/11/2027,No,No,,No,90
+Umbrella Systems,,SMB,$78000,Hector Lopez,Quinn Baxter,,No,No,,No,58
+Oakmont Systems 3,,SMB,$348000,Ivy Sullivan,Rosa Delgado,06/08/2027,No,No,,No,79
+Cascade Industries 2,,Mid-Market,$38000,Jamal Foster,Sam Whitfield,,No,No,,No,69
