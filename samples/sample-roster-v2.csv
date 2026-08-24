@@ -1,0 +1,83 @@
+Account Name,Ultimate Parent Account,Customer Segment,Annual Recurring Revenue,Account Manager,Renewal Manager,Next Renewal Date,Renewal Conversation Active?,Upsell Opportunity Open?,Upsell Pipeline ($),Book Transfer Date,Do Not Move,Health Score (0-100)
+Vertex Holdings,Vertex Holdings,Enterprise,$220000,Nora Ellis,Priya Anand,05/11/2027,No,No,,,No,74
+Vertex Holdings EMEA,Vertex Holdings,Enterprise,$180000,Marcus Webb,Derek Shaw,06/30/2027,No,No,,,No,68
+Vertex Holdings APAC,Vertex Holdings,Enterprise,$150000,Nora Ellis,Derek Shaw,03/12/2027,No,No,,,No,81
+Vertex Holdings LatAm,Vertex Holdings,Enterprise,$90000,Marcus Webb,Priya Anand,,No,No,,,No,59
+Vertex Holdings Manufacturing,Vertex Holdings,Enterprise,$60000,Marcus Webb,Derek Shaw,09/28/2027,No,No,,,No,
+Vertex Holdings Retail Div.,Vertex Holdings,Enterprise,$40000,Nora Ellis,Priya Anand,,No,No,,,No,77
+Anchor Systems North,Anchor Systems,Enterprise,$140000,Nora Ellis,Priya Anand,07/30/2027,No,No,,,No,71
+Anchor Systems South,Anchor Systems,Enterprise,$95000,Nora Ellis,Priya Anand,,No,No,,,No,66
+Beacon Analytics,Beacon Analytics,Mid-Market,$130000,Yuki Tanaka,Fatima Noor,05/01/2027,No,No,,,No,70
+Beacon Analytics West,Beacon Analytics,Mid-Market,$88000,Yuki Tanaka,Fatima Noor,,No,No,,,No,63
+Beacon Analytics East,Beacon Analytics,Mid-Market,$76000,Yuki Tanaka,Fatima Noor,03/02/2027,No,No,,,No,
+Beacon Analytics Subsidiary,Beacon Analytics,Mid-Market,$54000,Yuki Tanaka,Fatima Noor,,No,No,,,No,82
+Cobalt Partners East,Cobalt Partners,SMB,$48000,Owen Clark,Tomas Reyes,04/01/2027,No,No,,,No,75
+Cobalt Partners West,Cobalt Partners,SMB,$36000,Owen Clark,Tomas Reyes,,No,No,,,No,69
+Delta Dynamics,,Enterprise,$320000,Nora Ellis,Derek Shaw,10/08/2026,No,No,,,No,72
+Ember Networks,,Mid-Market,$140000,Beatriz Solis,Liam Brooks,09/05/2026,No,No,,,No,58
+Frostgate Systems,,SMB,$62000,Sara Kim,Ingrid Palmer,08/04/2026,No,No,,,No,64
+Granite Ventures,,SMB,$60000,Sara Kim,Ingrid Palmer,,Yes,No,,,No,80
+Halcyon Analytics,,Enterprise,$180000,Nora Ellis,Priya Anand,,Yes,No,,,No,
+Ironclad Networks,,SMB,$75000,Owen Clark,Tomas Reyes,,No,Yes,$40000,,No,61
+Juniper Dynamics,,Mid-Market,$210000,Yuki Tanaka,Fatima Noor,,No,Yes,$85000,,No,73
+Keystone Solutions,,Enterprise,$260000,Nora Ellis,Priya Anand,,No,No,,06/15/2026,No,55
+Lighthouse Industries,,Mid-Market,$130000,Beatriz Solis,Fatima Noor,,No,No,,03/27/2026,No,67
+Meridian Logistics,,Enterprise,$150000,Nora Ellis,Derek Shaw,,No,No,,,Yes,84
+Nimbus Partners,,SMB,$95000,Sara Kim,Tomas Reyes,,No,No,,,Yes,
+Orbit Holdings,,Enterprise,$400000,Nora Ellis,Derek Shaw,09/23/2026,No,Yes,$120000,,No,79
+Pinnacle Systems,,Mid-Market,$175000,Yuki Tanaka,Liam Brooks,,Yes,No,,07/15/2026,No,62
+Quarrystone Group,,SMB,$55000,Owen Clark,Ingrid Palmer,,No,Yes,$30000,,Yes,70
+Maplecrest Solutions,,Enterprise,$163000,Marcus Webb,Priya Anand,,No,No,$42000,,No,69
+Jasperfield Group,,Enterprise,$70000,Nora Ellis,Derek Shaw,,No,No,,,No,98
+Larkspur Partners,,Enterprise,$215000,Marcus Webb,Priya Anand,,No,No,,,No,39
+Ridgeway Solutions,,Enterprise,$55000,Marcus Webb,Derek Shaw,,No,No,,,No,
+Jasperfield Holdings,,Enterprise,$28000,Marcus Webb,Priya Anand,,No,No,,,No,44
+Jasperfield Holdings 2,,Enterprise,$154000,Marcus Webb,Derek Shaw,,No,No,,,No,64
+Fairview Group,,Enterprise,$192000,Nora Ellis,Derek Shaw,,No,No,,,No,60
+Elmsworth Group,,Enterprise,$91000,Marcus Webb,Derek Shaw,,No,No,,,No,40
+Palisade Analytics,,Enterprise,$244000,Nora Ellis,Priya Anand,,No,No,,,No,65
+Kestrel Holdings,,Enterprise,$20000,Nora Ellis,Priya Anand,,No,No,,,No,84
+Valleyview Analytics,,Enterprise,$223000,Nora Ellis,Priya Anand,,No,No,,,No,73
+Ivywood Group,,Enterprise,$89000,Nora Ellis,Priya Anand,,No,No,,,No,64
+Yewgrove Holdings,,Enterprise,$86000,Nora Ellis,Priya Anand,,No,No,$45000,,No,72
+Maplecrest Ventures,,Enterprise,$209000,Nora Ellis,Derek Shaw,,No,No,,,No,95
+Elmsworth Partners,,Enterprise,$131000,Nora Ellis,Priya Anand,07/22/2027,No,No,$53000,,No,82
+Elmsworth Networks,,Enterprise,$216000,Nora Ellis,Derek Shaw,,No,No,,,No,70
+Harborlight Analytics,,Enterprise,$79000,Nora Ellis,Derek Shaw,,No,No,$23000,,No,42
+Westbrook Industries,,Enterprise,$86000,Marcus Webb,Priya Anand,,No,No,,,No,65
+Oakhaven Group,,Mid-Market,$176000,Beatriz Solis,Fatima Noor,,No,No,,,No,73
+Cascade Partners,,Mid-Market,$218000,Yuki Tanaka,Liam Brooks,,No,No,$23000,,No,45
+Thornfield Industries,,Mid-Market,$159000,Yuki Tanaka,Fatima Noor,06/30/2027,No,No,,,No,
+Underwood Group,,Mid-Market,$160000,Beatriz Solis,Fatima Noor,,No,No,,,No,77
+Aster Group,,Mid-Market,$41000,Yuki Tanaka,Fatima Noor,,No,No,,,No,62
+Fairview Holdings,,Mid-Market,$34000,Yuki Tanaka,Liam Brooks,,No,No,,,No,55
+Thornfield Solutions,,Mid-Market,$191000,Yuki Tanaka,Fatima Noor,,No,No,,,No,45
+Harborlight Partners,,Mid-Market,$199000,Yuki Tanaka,Liam Brooks,,No,No,,,No,
+Driftwood Analytics,,Mid-Market,$226000,Yuki Tanaka,Liam Brooks,,No,No,,,No,90
+Westbrook Industries 2,,Mid-Market,$257000,Beatriz Solis,Liam Brooks,,No,No,$23000,,No,79
+Birchwood Networks,,Mid-Market,$228000,Yuki Tanaka,Liam Brooks,09/26/2027,No,No,,,No,37
+Cascade Networks,,Mid-Market,$222000,Yuki Tanaka,Fatima Noor,04/29/2027,No,No,,,No,
+Thornfield Networks,,Mid-Market,$208000,Yuki Tanaka,Fatima Noor,,No,No,,,No,94
+Aster Partners,,Mid-Market,$146000,Yuki Tanaka,Fatima Noor,,No,No,,,No,
+Westbrook Networks,,Mid-Market,$257000,Beatriz Solis,Fatima Noor,05/16/2027,No,No,$57000,,No,72
+Silverleaf Solutions,,Mid-Market,$244000,Beatriz Solis,Liam Brooks,,No,No,,,No,36
+Kestrel Networks,,Mid-Market,$29000,Yuki Tanaka,Fatima Noor,10/06/2027,No,No,,,No,77
+Ivywood Solutions,,Mid-Market,$246000,Beatriz Solis,Fatima Noor,01/09/2027,No,No,,,No,
+Quillfeather Ventures,,SMB,$183000,Sara Kim,Ingrid Palmer,,No,No,$18000,,No,67
+Thornfield Networks 2,,SMB,$160000,Owen Clark,Tomas Reyes,,No,No,,,No,76
+Palisade Holdings,,SMB,$227000,Sara Kim,Ingrid Palmer,10/31/2027,No,No,,,No,77
+Birchwood Holdings,,SMB,$144000,Sara Kim,Ingrid Palmer,06/23/2027,No,No,,,No,83
+Ivywood Partners,,SMB,$165000,Sara Kim,Tomas Reyes,01/08/2027,No,No,,,No,45
+Elmsworth Ventures,,SMB,$223000,Owen Clark,Tomas Reyes,,No,No,$57000,,No,89
+Kestrel Partners,,SMB,$163000,Sara Kim,Ingrid Palmer,,No,No,,,No,
+Driftwood Analytics 2,,SMB,$34000,Owen Clark,Ingrid Palmer,,No,No,,,No,64
+Cascade Group,,SMB,$178000,Owen Clark,Tomas Reyes,,No,No,,,No,43
+Ivywood Group 2,,SMB,$46000,Sara Kim,Ingrid Palmer,05/06/2027,No,No,$13000,,No,37
+Larkspur Solutions,,SMB,$221000,Sara Kim,Ingrid Palmer,,No,No,$59000,,No,47
+Ivywood Ventures,,SMB,$182000,Sara Kim,Tomas Reyes,03/24/2027,No,No,,,No,85
+Valleyview Networks,,SMB,$156000,Sara Kim,Ingrid Palmer,,No,No,,,No,59
+Driftwood Holdings,,SMB,$52000,Sara Kim,Ingrid Palmer,,No,No,,,No,60
+Jasperfield Group 2,,SMB,$175000,Owen Clark,Tomas Reyes,,No,No,$35000,,No,51
+Jasperfield Group 3,,SMB,$183000,Owen Clark,Tomas Reyes,08/17/2027,No,No,,,No,54
+Palisade Ventures,,SMB,$58000,Sara Kim,Ingrid Palmer,,No,No,,,No,73
+Ridgeway Group,,SMB,$168000,Owen Clark,Tomas Reyes,,No,No,,,No,77

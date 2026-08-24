@@ -315,6 +315,13 @@ npm run preview   # serve the built output locally
 
 ## Sample data
 
+Two sample files are included. `sample-roster.csv` is a large, realistic-looking roster; if
+you'd rather work from a smaller file where every test case is individually labeled and easy to
+verify by eye, use `sample-roster-v2.csv` instead (see
+[Targeted test file: `sample-roster-v2.csv`](#targeted-test-file-sample-roster-v2csv) below).
+
+### `sample-roster.csv` — the large, realistic roster
+
 [`samples/sample-roster.csv`](samples/sample-roster.csv) has 180 rows built to exercise every
 branch of all three passes:
 
@@ -333,6 +340,47 @@ branch of all three passes:
   flag, and a numeric `Health Score (0-100)` column, so every balancing metric has real data
 - Renewal dates spread across the next several months and quarters, so the distribution summary's
   time-bucketed columns have real variation to show
+
+## Targeted test file: `sample-roster-v2.csv`
+
+[`samples/sample-roster-v2.csv`](samples/sample-roster-v2.csv) is a smaller, **deliberately
+hand-designed** 82-row roster — every account exists to cover one specific, named test case rather
+than to look like a plausible real book. Use it when you want to verify one piece of behavior at a
+time instead of reading results out of 180 realistic-but-noisy rows. Regenerate it with:
+
+```bash
+npm run sample:generate-v2
+```
+
+(`scripts/generate-sample-roster-v2.mjs` — deterministic, same output every run.) It maps the same
+way as the other sample: `Account Manager` → an Owner rep column, `Renewal Manager` → a second rep
+column, everything else by name.
+
+Three segments (Enterprise, Mid-Market, SMB), each with its own **exclusive** 4-rep pool — 2 AMs
+and 2 Renewal Managers who appear in that segment only, so a segment's "before" and "after" totals
+in the Balance screen are simple to eyeball without cross-segment noise:
+
+| Segment | AMs | Renewal Managers |
+|---|---|---|
+| Enterprise | Nora Ellis, Marcus Webb | Priya Anand, Derek Shaw |
+| Mid-Market | Yuki Tanaka, Beatriz Solis | Fatima Noor, Liam Brooks |
+| SMB | Owen Clark, Sara Kim | Tomas Reyes, Ingrid Palmer |
+
+What each case covers, and what to expect when you run it through the app:
+
+| # | Case | Where it lives | What to check |
+|---|------|-----------------|---------------|
+| 1 | Three segments with fully separate rep pools | All rows | The Balance and Final Report screens never mix a rep into another segment's table |
+| 2 | Hierarchy groups of varying size, including a 2-child group | `Anchor Systems` (2 children, no parent row), `Cobalt Partners` (2 children, no parent row), `Beacon Analytics` (parent row + 3 children) | Locking report shows 4 consolidated groups of sizes 6/4/2/2; `Anchor Systems` and `Cobalt Partners` display their parent-ID string as the group name (fallback label path), `Beacon Analytics` and `Vertex Holdings` use the parent row's own name |
+| 3 | 5+-child hierarchy group | `Vertex Holdings` (1 parent row + 5 children = 6 members) | Locking report's largest consolidated group |
+| 4 | **Regression case** — inconsistent legacy ownership within one hierarchy group | `Vertex Holdings` — its 6 members carry 2 different AMs and 2 different RMs before consolidation | Locking report's Owner/RM columns for this group show multiple comma-joined names (not one clean owner); on the Balance screen this group's "before" load is exactly what previously got double-counted — conservation still holds (every segment/role pool's before and after totals sum to that pool's total, exactly) |
+| 5 | Every individual lock reason, ≥2 times each | 14 locked standalone accounts (see script comments for the full list) | Locking report's reason-count chips each read 3 or 4, never 0 or 1 |
+| 6 | Multiple overlapping lock reasons on one account | `Orbit Holdings` (renewal window + upsell), `Pinnacle Systems` (discussion + recently moved), `Quarrystone Group` (override + upsell) | Each shows 2 reason badges, not 1 |
+| 7 | No hierarchy at all | Every locked account and every flexible account (68 of 82 rows) | Confirms the no-parent-column path still works correctly alongside consolidation |
+| 8 | Volume of flexible, fully unlocked accounts per segment | 18 standalone unlocked accounts per segment (54 total), renewal dates (where set) always 100+ days out so they can't accidentally lock | Balance screen has enough movable accounts per segment pool for the fair-share math to mean something, not just 2–3 trivial reassignments |
+| 9 | Missing optional values | ~13% of rows have a blank Health Score; most rows have a blank Upsell Pipeline ($) | Upload and mapping succeed with no errors; the health-score weight slider still works using only the rows that have a number; blank cells never render as `$0` or `0` in the report |
+| 10 | Deliberate starting imbalance, easy to eyeball | Every Enterprise locked account is owned by Nora Ellis, and flexible Enterprise accounts skew ~78/22 to Nora Ellis over Marcus Webb | Before rebalancing, Nora's current book is **~3.1x** Marcus's (~$3.51M vs ~$1.12M — printed by the generator script on every run as a sanity check). After rebalancing (default equal weights), the two should land close to the $2.32M fair-share target, a dramatic and obvious swing in the before/after ARR columns |
+| 11 | Multi-IC pairing reuse, testable at volume | Only 4 possible (AM, RM) combinations exist per segment (2 AMs × 2 RMs), and every combination already appears in the roster as uploaded | Every one of the 58 unlocked multi-role reassignments reuses an existing pairing — the Balance screen's pairing summary reads 0 new pairings, and several individual pairings (e.g. `Marcus Webb` + `Priya Anand`) get reused by a dozen or more accounts each |
 
 ## Tech
 
